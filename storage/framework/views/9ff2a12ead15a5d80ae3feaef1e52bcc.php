@@ -49,3 +49,4 @@
 
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\laravelLab\resources\views/home.blade.php ENDPATH**/ ?>
