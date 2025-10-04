@@ -13,16 +13,20 @@
         }
 
         .a1 {
-            background-color: #cc5555ff;
+<<<<<<< Updated upstream
+            background-color: #e72f79ff;
+=======
+        
+>>>>>>> Stashed changes
             height: 50px;
             display: flex;
             align-items: center;
-            padding: 0 5px;
+            padding: 0 50px;
         }
 
         .a1 a {
             color: #fff;
-            margin-right: 50px;
+            margin-right: 100px;
             text-decoration: none;
             font-weight: bold;
         }
@@ -46,7 +50,10 @@
         </a>    
     </div>
 </nav>
-
+<h3>ภาพยนตร์</h3>
+<div>
+    
+</div>
 </body>
 </html>
 <?php /**PATH C:\Users\WINDOWS\OneDrive\เอกสาร\GitHub\laravelLab\resources\views/home.blade.php ENDPATH**/ ?>
