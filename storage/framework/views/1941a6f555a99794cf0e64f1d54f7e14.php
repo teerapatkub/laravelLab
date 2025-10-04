@@ -14,6 +14,7 @@
 
         .a1 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             background-color: #e72f79ff;
 =======
         
@@ -22,11 +23,22 @@
             display: flex;
             align-items: center;
             padding: 0 50px;
+=======
+            background-color: #cc5555ff;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+>>>>>>> Stashed changes
         }
 
         .a1 a {
             color: #fff;
+<<<<<<< Updated upstream
             margin-right: 100px;
+=======
+            margin-right: 50px;
+>>>>>>> Stashed changes
             text-decoration: none;
             font-weight: bold;
         }
@@ -50,10 +62,14 @@
         </a>    
     </div>
 </nav>
+<<<<<<< Updated upstream
 <h3>ภาพยนตร์</h3>
 <div>
     
 </div>
+=======
+
+>>>>>>> Stashed changes
 </body>
 </html>
 <?php /**PATH C:\Users\WINDOWS\OneDrive\เอกสาร\GitHub\laravelLab\resources\views/home.blade.php ENDPATH**/ ?>

@@ -14,9 +14,13 @@
 
         .a1 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             background-color: #e72f79ff;
 =======
         
+>>>>>>> Stashed changes
+=======
+            background-color: #cc5555ff;
 >>>>>>> Stashed changes
             height: 50px;
             display: flex;
