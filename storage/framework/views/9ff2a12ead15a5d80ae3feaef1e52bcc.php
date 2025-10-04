@@ -17,12 +17,12 @@
             height: 50px;
             display: flex;
             align-items: center;
-            padding: 0 5px;
+            padding: 0 50px;
         }
 
         .a1 a {
             color: #fff;
-            margin-right: 50px;
+            margin-right: 100px;
             text-decoration: none;
             font-weight: bold;
         }
