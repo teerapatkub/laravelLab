@@ -16,7 +16,7 @@
 <<<<<<< Updated upstream
             background-color: #e72f79ff;
 =======
-            background-color: #cc5555ff;
+        
 >>>>>>> Stashed changes
             height: 50px;
             display: flex;
