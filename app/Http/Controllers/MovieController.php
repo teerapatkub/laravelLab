@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Movie;
-use App\Models\Cinema;
+use Illuminate\Support\Facades\DB;
 
 class MovieController extends Controller
 {
-    public function index(Request $request)
+    // หน้าแรก
+    public function home()
     {
-        $movies = Movie::query()
-            ->when($request->cinema_id, fn($q) => $q->where('cinema_id', $request->cinema_id))
-            ->when($request->q, fn($q) => $q->where('title', 'like', '%'.$request->q.'%'))
-            ->get();
+        $movies = DB::table('Movie')->get(); // ชื่อตารางตรงกับ MySQL
+        return view('home', ['movies' => $movies]);
+    }
 
-        $cinemas = Cinema::all();
-
-        return view('movies.index', compact('movies','cinemas'));
+    // หน้าแสดงหนังทั้งหมด
+    public function index()
+    {
+        $movies = DB::table('Movie')->get();
+        return view('movies', ['movies' => $movies]);
     }
 }

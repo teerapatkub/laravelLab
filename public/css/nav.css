@@ -1,0 +1,29 @@
+/* ------- ตั้งค่าพื้นหลังและฟอนต์ของเว็บ ------- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5e3e7; /* สีพื้นหลังชมพูอ่อน */
+        font-family: 'Prompt', sans-serif; /* ฟอนต์ภาษาไทยอ่านง่าย */
+}
+
+/* ------- แถบเมนูด้านบน (Navbar) ------- */
+.a1 {
+    background-color: #e72f79ff; /* สีชมพูเข้ม */
+    height: 50px;
+    display: flex; /* จัดเมนูให้อยู่ในแนวนอน */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    padding: 0 50px; /* เว้นขอบด้านซ้ายและขวา */
+}
+
+.a1 a {
+    color: #fff; /* ตัวอักษรสีขาว */
+    margin-right: 100px; /* ระยะห่างระหว่างลิงก์ */
+    text-decoration: none; /* ตัดเส้นใต้ลิงก์ออก */
+    font-weight: bold; /* ตัวหนา */
+}
+
+.user-icon {
+    margin-left: auto; /* ดันไอคอนผู้ใช้ไปชิดขวา */
+}
+
+ 
