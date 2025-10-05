@@ -9,9 +9,12 @@ class ShowtimeController extends Controller
 {
     public function show($Movie_ID)
     {
-        $movies = Movie::findOrFail($Movie_ID);
+        // ดึงหนังพร้อมรอบฉาย + โรงหนัง
+        $movie = Movie::with('showtimes.theater')->findOrFail($Movie_ID);
 
-        // ส่งข้อมูลหนังไปหน้าเลือกรอบฉาย
-        return view('showtime', compact('movies'));
+        return view('showtime', [
+            'movies' => $movie,
+            'showtimes' => $movie->showtimes
+        ]);
     }
 }
