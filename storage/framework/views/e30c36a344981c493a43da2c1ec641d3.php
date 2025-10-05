@@ -29,20 +29,28 @@
     </style>
 </head>
 <body>
-    <!-- ===================== Navbar ===================== -->
     <nav>
-        <div class="a1">
-            <!-- ลิงก์เมนูหลัก -->
-            <a href="">หน้าแรก</a>
-            <a href="">ภาพยนตร์</a>
-            <a href="">ประวัติการเข้าชม</a>
+  <div class="a1">
+    <a href="<?php echo e(url('/home')); ?>">หน้าแรก</a>
+    <a href="<?php echo e(url('/movies')); ?>">ภาพยนตร์</a>
+    <a href="<?php echo e(url('/history')); ?>">ประวัติการเข้าชม</a>
 
-            <!-- ไอคอนผู้ใช้ด้านขวา -->
-            <a href="" class="user-icon">
-                <img src="<?php echo e(asset('Icon/circle-user.png')); ?>" alt="User Icon" width="24" height="24">
-            </a>    
-        </div>
-    </nav>
+    <div class="nav-right">
+      <a href="<?php echo e(route('myprofile')); ?>" class="user-link" title="โปรไฟล์">
+        <img src="<?php echo e(asset('Icon/circle-user.png')); ?>" alt="User" width="24" height="24">
+      </a>
+
+      <?php if(auth()->guard()->check()): ?>
+      <form action="<?php echo e(route('logout')); ?>" method="POST" class="logout-form">
+        <?php echo csrf_field(); ?>
+        <button type="submit" class="logout-btn">ออกจากระบบ</button>
+      </form>
+      <?php else: ?>
+      <a href="<?php echo e(route('login')); ?>" class="login-btn">เข้าสู่ระบบ</a>
+      <?php endif; ?>
+    </div>
+  </div>
+</nav>
     
     <div class="movie-grid">
         <img src="<?php echo e(asset($movies->Movie_img)); ?>" alt="<?php echo e($movies->Movie_NAME); ?>">
@@ -60,4 +68,4 @@
 
 </body>
 </html>
-<?php /**PATH C:\Users\WINDOWS\OneDrive\เอกสาร\GitHub\laravelLab\resources\views/showtime.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\laravelLab\resources\views/showtime.blade.php ENDPATH**/ ?>
