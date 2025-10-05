@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers; // ต้องมี namespace ด้วย
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Showw;
 use App\Models\Booking;
-
-// เพิ่มบรรทัดนี้เพื่อให้รู้จัก Controller ของ Laravel
 use App\Http\Controllers\Controller;
 
 class BookingController extends Controller

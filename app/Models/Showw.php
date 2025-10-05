@@ -14,6 +14,7 @@ class Showw extends Model
     public $incrementing = false;
     protected $keyType = 'string';
 
+    // ชื่อคอลัมน์สำหรับ SoftDeletes
     const DELETED_AT = 'deleteat';
 
     protected $fillable = [

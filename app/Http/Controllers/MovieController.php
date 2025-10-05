@@ -10,14 +10,14 @@ class MovieController extends Controller
     // หน้าแรก
     public function home()
     {
-        $movies = DB::table('Movie')->get(); // ชื่อตารางตรงกับ MySQL
+        $movies = DB::table('movie')->get(); // ชื่อตารางตรงกับ MySQL
         return view('home', ['movies' => $movies]);
     }
 
     // หน้าแสดงหนังทั้งหมด
     public function index()
     {
-        $movies = DB::table('Movie')->get();
+        $movies = DB::table('movie')->get();
         return view('movies', ['movies' => $movies]);
     }
 

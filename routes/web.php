@@ -4,25 +4,22 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShowtimeController;
+use App\Http\Controllers\BookingController;
 
-// หน้า Home (เรียก Controller)
+// หน้า Home
 Route::get('/home', [MovieController::class, 'home'])->name('home');
 
-// แสดงหน้ารายชื่อภาพยนตร์
+// แสดงรายชื่อภาพยนตร์
 Route::get('/movies', [MovieController::class, 'index'])->name('movies');
 
 // แสดงรอบฉายของหนัง
 Route::get('/showtime/{Movie_ID}', [ShowtimeController::class, 'show'])->name('showtime');
 
-use App\Http\Controllers\BookingController;
-// แสดงฟอร์มจอง
+// ฟอร์มจองและบันทึกการจอง
 Route::get('/booking/create/{show}', [BookingController::class, 'create'])->name('booking.create');
-// บันทึกการจอง
 Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
 
-
-
-// ต้องล็อกอินก่อนถึงจะเข้าได้
+// ต้องล็อกอินก่อนถึงเข้าได้
 Route::middleware('auth')->group(function () {
 
     // โปรไฟล์ผู้ใช้
@@ -30,9 +27,9 @@ Route::middleware('auth')->group(function () {
         return view('myprofile');  
     })->name('myprofile');
     
-    // แสดงหน้าแก้ไขโปรไฟล์
+    // แก้ไขโปรไฟล์
     Route::get('/myprofile/edit', [ProfileController::class, 'edit'])->name('myprofile.edit');
     
-    // อัพเดทข้อมูลโปรไฟล์
+    // อัพเดทโปรไฟล์
     Route::put('/myprofile/update', [ProfileController::class, 'update'])->name('myprofile.update');
 });
