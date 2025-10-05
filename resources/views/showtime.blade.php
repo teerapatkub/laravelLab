@@ -26,6 +26,43 @@
             margin: 20px 0 0 20px ;
         }
 
+
+        
+    table {
+        width: 90%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    thead {
+        background-color: #343a40;
+        color: white;
+    }
+
+    th, td {
+        padding: 16px 20px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    th {
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    tbody tr {
+        border-bottom: 1px solid #e9ecef;
+        transition: background-color 0.3s ease;
+    }
+
+    tbody tr:hover {
+        background-color: #f1f3f5;
+    
+    }
     </style>
 </head>
 <body>
@@ -53,10 +90,36 @@
             <p>เวลา: {{ $movies->Movie_TIME }}</p>
         </div>
     </div>
+    
+<!-- ===================== ตารางรอบฉาย ===================== -->
+    <h2 style="text-align:center; margin-top:40px;">รอบฉาย</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>วันที่</th>
+                <th>เวลา</th>
+                <th>ภาษา</th>
+                <th>โรงภาพยนตร์</th>
+                <th>ห้องฉาย</th>
+                <th>จอง</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($showtimes as $show)
+        <tr>
+            <td>{{ \Carbon\Carbon::parse($show->show_date)->locale('th')->translatedFormat('j M Y') }}</td>
+            <td>{{ \Carbon\Carbon::parse($show->show_time)->format('H:i') }}</td>
+            <td>{{ $show->show_language }}</td>
+            <td>{{ $show->theater->theater_name }}</td>
+            <td>{{ $show->hall_number }}</td>
+            <td>
+                <a href="{{ route('booking.create', $show->show_id) }}" class="book-btn">จอง</a>
+            </td>
+        </tr>
+            @endforeach
+        </tbody>
+    </table>
 
-<!-- <video controls>
-    <source src="{{ asset($movies->Movie_video) }}" type="video/mp4">
-</video> -->
 
 </body>
 </html>

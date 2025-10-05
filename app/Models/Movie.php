@@ -9,12 +9,11 @@ class Movie extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'Movie'; // ชื่อตารางตรงกับ MySQL
+    protected $table = 'Movie';
     protected $primaryKey = 'Movie_ID';
     public $incrementing = false;
     protected $keyType = 'string';
 
-    // บอก Laravel ใช้คอลัมน์ deleteAT แทน deleted_at
     const DELETED_AT = 'deleteAT';
 
     protected $fillable = [
@@ -26,4 +25,10 @@ class Movie extends Model
         'Movie_img',
         'Movie_video'
     ];
+
+    // ความสัมพันธ์กับรอบหนัง
+    public function showtimes()
+    {
+        return $this->hasMany(Showw::class, 'movie_movie_id', 'Movie_ID');
+    }
 }
