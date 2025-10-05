@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar Local Icon</title>
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="<?php echo e(asset('css/nav.css')); ?>">
+=======
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+>>>>>>> Stashed changes
     <style>
         /* ------- หัวข้อส่วนภาพยนตร์ ------- */
         h3 {
@@ -65,6 +69,7 @@
 </head>
 <body>
 
+<<<<<<< Updated upstream
    <nav>
   <div class="a1">
     <a href="<?php echo e(url('/home')); ?>">หน้าแรก</a>
@@ -87,6 +92,21 @@
     </div>
   </div>
 </nav>
+=======
+    <!-- ===================== Navbar ===================== -->
+    <nav>
+        <div class="a1">
+            <a href="/">หน้าแรก</a>
+            <a href="/movies">ภาพยนตร์</a>
+            <a href="/history">ประวัติการเข้าชม</a>
+
+            <!-- ไอคอนผู้ใช้ด้านขวา -->
+            <a href="<?php echo e(route('myprofile')); ?>" class="user-icon" style="margin-left:auto;">
+                <img src="Icon/circle-user.png" alt="User Icon" width="24" height="24">
+            </a>
+        </div>
+    </nav>
+>>>>>>> Stashed changes
 
     <!-- ===================== ส่วนแสดงภาพยนตร์ ===================== -->
     <h3>ภาพยนตร์</h3>
