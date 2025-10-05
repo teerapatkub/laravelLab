@@ -29,20 +29,28 @@
     </style>
 </head>
 <body>
-    <!-- ===================== Navbar ===================== -->
     <nav>
-        <div class="a1">
-            <!-- ลิงก์เมนูหลัก -->
-            <a href="">หน้าแรก</a>
-            <a href="">ภาพยนตร์</a>
-            <a href="">ประวัติการเข้าชม</a>
+  <div class="a1">
+    <a href="{{ url('/home') }}">หน้าแรก</a>
+    <a href="{{ url('/movies') }}">ภาพยนตร์</a>
+    <a href="{{ url('/history') }}">ประวัติการเข้าชม</a>
 
-            <!-- ไอคอนผู้ใช้ด้านขวา -->
-            <a href="" class="user-icon">
-                <img src="{{ asset('Icon/circle-user.png') }}" alt="User Icon" width="24" height="24">
-            </a>    
-        </div>
-    </nav>
+    <div class="nav-right">
+      <a href="{{ route('myprofile') }}" class="user-link" title="โปรไฟล์">
+        <img src="{{ asset('Icon/circle-user.png') }}" alt="User" width="24" height="24">
+      </a>
+
+      @auth
+      <form action="{{ route('logout') }}" method="POST" class="logout-form">
+        @csrf
+        <button type="submit" class="logout-btn">ออกจากระบบ</button>
+      </form>
+      @else
+      <a href="{{ route('login') }}" class="login-btn">เข้าสู่ระบบ</a>
+      @endauth
+    </div>
+  </div>
+</nav>
     
     <div class="movie-grid">
         <img src="{{ asset($movies->Movie_img) }}" alt="{{ $movies->Movie_NAME }}">
