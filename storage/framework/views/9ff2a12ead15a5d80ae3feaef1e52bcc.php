@@ -41,8 +41,9 @@
         <a href=""></i> ภาพยนตร์</a>
         <a href=""></i> ประวัติการเข้าชม</a>
 
-        <a href="" class="user-icon">
+        <a href="<?php echo e(route('myprofile')); ?>"      class="user-icon">
             <img src="Icon/circle-user.png" alt="User Icon" width="24" height="24" >
+            
         </a>    
     </div>
 </nav>
