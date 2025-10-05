@@ -14,12 +14,21 @@
             margin-bottom: 30px;
         }
 
+<<<<<<< Updated upstream
         /* ------- พื้นที่จัดเรียงการ์ดหนัง (Grid) ------- */
         .movie-grid {
             display: grid; /* ใช้ระบบกริด */
             grid-template-columns: repeat(4, 1fr); /* แถวละ 3 เรื่อง */
             gap: 30px; /* ช่องว่างระหว่างการ์ด */
             justify-items: center; /* จัดให้อยู่กลางในแต่ละช่อง */
+=======
+        .a1 {
+            background-color: #cc5555ff;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+>>>>>>> Stashed changes
         }
 
         .movie-grid a{
@@ -68,6 +77,7 @@
             <a href="">ภาพยนตร์</a>
             <a href="">ประวัติการเข้าชม</a>
 
+<<<<<<< Updated upstream
             <!-- ไอคอนผู้ใช้ด้านขวา -->
             <a href="" class="user-icon">
                 <img src="Icon/circle-user.png" alt="User Icon" width="24" height="24">
@@ -89,5 +99,16 @@
     @endforeach
 </div>
 
+=======
+        <a href="" class="user-icon">
+            <img src="Icon/circle-user.png" alt="User Icon" width="24" height="24" >
+        </a>    
+    </div>
+</nav>
+<h3>ภาพยนตร์</h3>
+<div>
+    
+</div>
+>>>>>>> Stashed changes
 </body>
 </html>
