@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar Local Icon</title>
-    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
     <style>
         /* ------- หัวข้อส่วนภาพยนตร์ ------- */
         h3 {
@@ -65,19 +65,28 @@
 </head>
 <body>
 
-    <!-- ===================== Navbar ===================== -->
-    <nav>
-        <div class="a1">
-            <a href="/">หน้าแรก</a>
-            <a href="/movies">ภาพยนตร์</a>
-            <a href="/history">ประวัติการเข้าชม</a>
+   <nav>
+  <div class="a1">
+    <a href="{{ url('/home') }}">หน้าแรก</a>
+    <a href="{{ url('/movies') }}">ภาพยนตร์</a>
+    <a href="{{ url('/history') }}">ประวัติการเข้าชม</a>
 
-            <!-- ไอคอนผู้ใช้ด้านขวา -->
-            <a href="{{ route('myprofile') }}" class="user-icon" style="margin-left:auto;">
-                <img src="Icon/circle-user.png" alt="User Icon" width="24" height="24">
-            </a>
-        </div>
-    </nav>
+    <div class="nav-right">
+      <a href="{{ route('myprofile') }}" class="user-link" title="โปรไฟล์">
+        <img src="{{ asset('Icon/circle-user.png') }}" alt="User" width="24" height="24">
+      </a>
+
+      @auth
+      <form action="{{ route('logout') }}" method="POST" class="logout-form">
+        @csrf
+        <button type="submit" class="logout-btn">ออกจากระบบ</button>
+      </form>
+      @else
+      <a href="{{ route('login') }}" class="login-btn">เข้าสู่ระบบ</a>
+      @endauth
+    </div>
+  </div>
+</nav>
 
     <!-- ===================== ส่วนแสดงภาพยนตร์ ===================== -->
     <h3>ภาพยนตร์</h3>

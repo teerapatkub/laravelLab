@@ -26,4 +26,39 @@ body {
     margin-left: auto; /* ดันไอคอนผู้ใช้ไปชิดขวา */
 }
 
+/* ---- กล่องขวาสุด: รวมไอคอน + ปุ่ม ---- */
+.nav-right{
+  margin-left: auto;      /* ดันทั้งกล่องไปชิดขวา */
+  display: flex;
+  align-items: center;
+  gap: 12px;              /* ระยะห่างไอคอนกับปุ่ม */
+}
+
+/* override ของเดิมที่ดันไอคอนไปชิดขวา (ไม่ต้องดันแล้ว เพราะใช้ .nav-right แทน) */
+.user-icon { margin-left: 0 !important; }
+
+/* ฟอร์ม logout ไม่ให้มี margin ซ้าย */
+.logout-form { margin: 0; }
+
+/* ปุ่มออกจากระบบ (ปรับสีให้ contrast ดีขึ้น) */
+.logout-btn{
+  background: #ef4444;      /* แดง */
+  color: #ffffff;           /* ตัวอักษรขาว */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.logout-btn:hover{ background: #dc2626; }
+
+/* ปุ่มเข้าสู่ระบบตอน guest */
+.login-btn{
  
+  color: #e72f79;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.login-btn:hover{ opacity: .9; }
