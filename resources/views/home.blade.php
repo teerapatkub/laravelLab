@@ -14,26 +14,6 @@
             margin-bottom: 30px;
         }
 
-        /* ------- Navbar ------- */
-        .a1 {
-            background-color: #cc5555ff;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            padding: 0 5px;
-            gap: 15px;
-        }
-
-        .a1 a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .a1 a:hover {
-            text-decoration: underline;
-        }
-
         /* ------- พื้นที่จัดเรียงการ์ดหนัง (Grid) ------- */
         .movie-grid {
             display: grid;

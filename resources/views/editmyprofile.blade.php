@@ -3,38 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="{{ asset('css/nav.css') }}">
     <title>แก้ไขข้อมูลส่วนตัว</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f5e3e7;
-            font-family: Arial, sans-serif;
-        }
-
-        .navbar {
-            background-color: #e72f79ff;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            padding: 0 50px;
-        }
-
-        .navbar a {
-            color: #fff;
-            margin-right: 100px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .navbar a:hover {
-            opacity: 0.8;
-        }
-
-        .user-icon {
-            margin-left: auto;
-        }
-
+      
+        
         .edit-container {
             display: flex;
             justify-content: center;
@@ -148,15 +121,18 @@
 </head>
 <body>
 
-<nav class="navbar">
-    <a href="/home">หน้าแรก</a>
-    <a href="/movies">ภาพยนตร์</a>
-    <a href="#">ประวัติการเข้าชม</a>
-    
-    <a href="{{ route('myprofile') }}" class="user-icon">
-        <img src="{{ asset('Icon/circle-user.png') }}" alt="User Icon" width="24" height="24">
-    </a>
-</nav>
+<nav>
+        <div class="a1">
+            <a href="/">หน้าแรก</a>
+            <a href="/movies">ภาพยนตร์</a>
+            <a href="/history">ประวัติการเข้าชม</a>
+
+            <!-- ไอคอนผู้ใช้ด้านขวา -->
+            <a href="" class="user-icon">
+                <img src="{{ asset('Icon/circle-user.png') }}" alt="User Icon" width="24" height="24">
+            </a> 
+        </div>
+    </nav>
 
 <div class="edit-container">
     <div class="edit-card">

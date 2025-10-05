@@ -106,9 +106,9 @@
 <body>
 <!-- Navbar -->
 <nav class="navbar">
-    <a href="/home">หน้าแรก</a>
-    <a href="/movies">ภาพยนตร์</a>
-    <a href="#">ประวัติการเข้าชม</a>
+    <a href="{{ url('/home') }}">หน้าแรก</a>
+    <a href="{{ url('/movies') }}">ภาพยนตร์</a>
+    <a href="{{ url('/history') }}">ประวัติการเข้าชม</a>
     
     <a href="{{ route('myprofile') }}" class="user-icon">
         <img src="{{ asset('Icon/circle-user.png') }}" alt="User Icon" width="24" height="24">
