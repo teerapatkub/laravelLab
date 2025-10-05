@@ -3,37 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo e(asset('css/nav.css')); ?>">
+
     <title>ข้อมูลส่วนตัว</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f5e3e7;
-            font-family: Arial, sans-serif;
-        }
-        /* Navbar */
-        .navbar {
-            background-color: #e72f79ff;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            padding: 0 50px;
-        }
-        .navbar a {
-            color: #fff;
-            margin-right: 100px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .navbar a:hover {
-            opacity: 0.8;
-        }
-        .user-icon {
-            margin-left: auto;
-        }
-        .user-icon img {
-            cursor: pointer;
-        }
+       
         /* Profile Card */
         .profile-container {
             display: flex;
@@ -105,15 +79,31 @@
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar">
-    <a href="/home">หน้าแรก</a>
-    <a href="/movies">ภาพยนตร์</a>
-    <a href="#">ประวัติการเข้าชม</a>
-    
-    <a href="<?php echo e(route('myprofile')); ?>" class="user-icon">
-        <img src="<?php echo e(asset('Icon/circle-user.png')); ?>" alt="User Icon" width="24" height="24">
-    </a>
+
+<nav>
+  <div class="a1">
+    <a href="<?php echo e(url('/home')); ?>">หน้าแรก</a>
+    <a href="<?php echo e(url('/movies')); ?>">ภาพยนตร์</a>
+    <a href="<?php echo e(url('/history')); ?>">ประวัติการเข้าชม</a>
+
+    <div class="nav-right">
+      <a href="<?php echo e(route('myprofile')); ?>" class="user-link" title="โปรไฟล์">
+        <img src="<?php echo e(asset('Icon/circle-user.png')); ?>" alt="User" width="24" height="24">
+      </a>
+
+      <?php if(auth()->guard()->check()): ?>
+      <form action="<?php echo e(route('logout')); ?>" method="POST" class="logout-form">
+        <?php echo csrf_field(); ?>
+        <button type="submit" class="logout-btn">ออกจากระบบ</button>
+      </form>
+      <?php else: ?>
+      <a href="<?php echo e(route('login')); ?>" class="login-btn">เข้าสู่ระบบ</a>
+      <?php endif; ?>
+    </div>
+  </div>
 </nav>
+
+
 
 <!-- Profile Content -->
 <div class="profile-container">
