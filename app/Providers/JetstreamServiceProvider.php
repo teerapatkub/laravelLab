@@ -6,6 +6,10 @@ use App\Actions\Jetstream\DeleteUser;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
 
+// ⬇️ เพิ่ม use สำหรับ Fortify Response และคลาสที่เราจะใช้
+use Laravel\Fortify\Contracts\LogoutResponse as LogoutResponseContract;
+use App\Http\Responses\LogoutResponse;
+
 class JetstreamServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +17,8 @@ class JetstreamServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // ⬇️ ผูกให้ Fortify ใช้ LogoutResponse ของเรา
+        $this->app->singleton(LogoutResponseContract::class, LogoutResponse::class);
     }
 
     /**
