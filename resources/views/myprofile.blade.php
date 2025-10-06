@@ -103,8 +103,6 @@
   </div>
 </nav>
 
-
-
 <!-- Profile Content -->
 <div class="profile-container">
     <div class="profile-card">

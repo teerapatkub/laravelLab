@@ -1,1 +1,0 @@
-<?php /**PATH C:\Users\WINDOWS\OneDrive\เอกสาร\GitHub\laravelLab\resources\views/create.blade.php ENDPATH**/ ?>
